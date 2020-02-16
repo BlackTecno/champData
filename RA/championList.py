@@ -3,8 +3,8 @@ import array
 import json
 
 ########################
-def getList():
-    URL = 'http://ddragon.leagueoflegends.com/cdn/10.3.1/data/en_US/champion.json'
+def getList(patch):
+    URL = 'http://ddragon.leagueoflegends.com/cdn/' + patch + '/data/en_US/champion.json'
     response = requests.get(URL)
     parsed = response.json()
     parsed = parsed["data"]
@@ -17,8 +17,8 @@ def getList():
 
 
 ######################
-def allChampInfo(list):
-    URL = 'http://ddragon.leagueoflegends.com/cdn/10.3.1/data/en_US/champion/'
+def allChampInfo(list, patch):
+    URL = 'http://ddragon.leagueoflegends.com/cdn/' + patch + '/data/en_US/champion/'
     champInfo = []
 
     for x in range(0, 2):
